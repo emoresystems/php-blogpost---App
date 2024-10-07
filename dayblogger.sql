@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 04, 2024 at 12:23 PM
+-- Generation Time: Oct 07, 2024 at 12:31 PM
 -- Server version: 8.0.39-0ubuntu0.24.04.2
 -- PHP Version: 8.3.12
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `dayblogger`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `message`, `created_at`) VALUES
+(1, 'JOSEPH NYAGA', 'JOSEPHNYAGA@GMAIL.COM', 'nscrowler39@gmail.com', 'dsfghjkl;\\\'\\\";lkjhgfdghj', '2024-10-07 12:06:37'),
+(2, 'nicholus munene', 'nscrowler339@gmail.com', 'from kingpower', 'sdfghjklkjhgfd', '2024-10-07 12:14:01');
 
 -- --------------------------------------------------------
 
@@ -51,6 +74,12 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `is_ad
 --
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -59,6 +88,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
